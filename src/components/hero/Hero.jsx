@@ -54,45 +54,48 @@ const Hero = () => {
             >
               <li>
                 <a href="https://github.com/Mayank10082000">
-                  {" "}
-                  <AiFillGithub className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />{" "}
+                  <AiFillGithub className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
                 </a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/mayankgupta10082000/">
-                  {" "}
-                  <FaLinkedinIn className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125 " />{" "}
+                  <FaLinkedinIn className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
                 </a>
               </li>
               <li>
                 <a href="https://www.kaggle.com/mayankasheshgupta">
-                  {" "}
-                  <SiKaggle className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
+                  <SiKaggle className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
                 </a>
               </li>
               <li>
                 <a href="https://leetcode.com/u/mayankgupta2000/">
-                  {" "}
-                  <SiLeetcode className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
+                  <SiLeetcode className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
                 </a>
               </li>
               <li>
-                <a href="mailto: mayankasheshgupta@gmail.com">
-                  {" "}
-                  <MdEmail className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />{" "}
+                <a href="mailto:mayankasheshgupta@gmail.com">
+                  <MdEmail className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="right  top-5 flex-1 flex items-center justify-center md:items-end sm:items-end">
+        <div className="right top-5 flex-1 flex items-center justify-center md:items-end sm:items-end">
           <div className="relative h-[88%] w-fit flex items-center sm:items-end">
-            <img
-              data-aos="fade-up"
-              className=" h-[90%]  w-full object-cover md:h-[95%] md:m-auto sm:m-0"
-              src={mine}
-              alt="mine"
-            />
+            {/* Animated Circular Line Container */}
+            <div className="relative">
+              {/* Circular Lines */}
+              <div className="absolute -inset-4 border-4 border-yellow-500 border-l-transparent border-r-transparent animate-spin-slow rounded-full"></div>
+              <div className="absolute -inset-2 border-4 border-yellow-500 border-t-transparent border-b-transparent animate-spin-reverse-slow rounded-full"></div>
+
+              {/* Image */}
+              <img
+                data-aos="fade-up"
+                className="h-[90%] w-full object-cover md:h-[95%] md:m-auto sm:m-0 z-10 relative"
+                src={mine}
+                alt="Mayank Gupta"
+              />
+            </div>
           </div>
         </div>
       </div>

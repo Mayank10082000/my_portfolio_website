@@ -37,6 +37,16 @@ module.exports = {
       colors: {
         "text-yellow-500": "#ffc312",
       },
+      animation: {
+        "spin-slow": "spin 8s linear infinite",
+        "spin-reverse-slow": "spin-reverse 8s linear infinite",
+      },
+      keyframes: {
+        "spin-reverse": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(-360deg)" },
+        },
+      },
     },
   },
   plugins: [],
