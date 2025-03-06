@@ -86,13 +86,6 @@ const Hero = () => {
               src={mine}
               alt="mine"
             />
-            <div className=" absolute bottom-10 md:bottom-3 right-8 md:right-2">
-              <div
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                className=" relative cursor-pointer"
-              ></div>
-            </div>
           </div>
         </div>
       </div>
