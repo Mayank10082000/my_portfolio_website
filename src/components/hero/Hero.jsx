@@ -6,6 +6,7 @@ import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../../assets/Resume.pdf";
 import mine from "../../assets/mayank-gupta.png";
 import { SiKaggle, SiLeetcode } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
 
 const Hero = () => {
   return (
@@ -30,7 +31,7 @@ const Hero = () => {
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
             <a
-              href=""
+              href="https://www.linkedin.com/in/mayankgupta10082000/"
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
             >
               <span>Hire Me</span>
@@ -49,30 +50,36 @@ const Hero = () => {
             <ul
               data-aos="fade-up"
               data-aos-duration="1500"
-              className=" flex gap-5"
+              className="flex gap-5"
             >
               <li>
-                <a href="">
+                <a href="https://github.com/Mayank10082000">
                   {" "}
                   <AiFillGithub className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />{" "}
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="https://www.linkedin.com/in/mayankgupta10082000/">
                   {" "}
                   <FaLinkedinIn className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125 " />{" "}
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="https://www.kaggle.com/mayankasheshgupta">
                   {" "}
                   <SiKaggle className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="https://leetcode.com/u/mayankgupta2000/">
                   {" "}
                   <SiLeetcode className=" h-[1.8rem] w-[1.8rem] text-xl hover:scale-125  " />{" "}
+                </a>
+              </li>
+              <li>
+                <a href="mailto: mayankasheshgupta@gmail.com">
+                  {" "}
+                  <MdEmail className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />{" "}
                 </a>
               </li>
             </ul>

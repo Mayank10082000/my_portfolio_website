@@ -2,7 +2,7 @@ import React from "react";
 
 const Resume = () => {
   return (
-    <div id="resume" className=" container m-auto   mt-16">
+    <div id="projects" className=" container m-auto   mt-16">
       {/* heading */}
       <div data-aos="fade-up" className="relative mb-5">
         <h3 className=" text-3xl font-black text-gray-400 sm:text-2xl">
@@ -82,7 +82,7 @@ const Resume = () => {
                   Year 2023 - Year 2027
                 </span>
                 <p className=" text-[.9rem] text-justify text-gray-500">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Excepturi nihil aut quae obcaecati alias placeat totam aperiam
                   pariatur quam? Accusantium minima aperiam error obcaecati
                   autem doloribus deserunt qui, laborum incidunt amet, numquam
