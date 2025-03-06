@@ -1,3 +1,1 @@
-# Portfolio
-
-LINK: https://sandip-portfoliojs.netlify.app/
+# my_portfolio_website
