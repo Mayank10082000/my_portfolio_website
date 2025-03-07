@@ -23,7 +23,7 @@ const achievementData = [
     description: "Score of 491 out of 1000 and AIR 2371",
     link: "https://link-to-gate-da-scorecard.com",
     linkText: "View Score Card",
-    icon: "award",
+    icon: "trophy",
   },
   {
     id: 4,
