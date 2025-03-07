@@ -90,3 +90,22 @@ html {
 .rotate-y-0 {
   transform: rotateY(0deg);
 }
+
+/* Add this to your index.css file after the existing animations */
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-animation {
+  animation: slideLeft 15s linear infinite;
+}
+
+.slide-animation:hover {
+  animation-play-state: paused;
+}

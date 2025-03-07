@@ -3,8 +3,8 @@ import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
-import resumePDF from "../../assets/Resume.pdf";
-import mine from "../../assets/mayank-gupta.png";
+import resumePDF from "../assets/Resume.pdf";
+import mine from "../assets/mayank-gupta.png";
 import { SiKaggle, SiLeetcode } from "react-icons/si";
 import { MdEmail } from "react-icons/md";
 

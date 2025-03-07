@@ -1,5 +1,5 @@
 import React from "react";
-import SkillBox from "../../chip/SkillBox";
+import SkillBox from "../chip/SkillBox";
 
 import {
   SiPython,
