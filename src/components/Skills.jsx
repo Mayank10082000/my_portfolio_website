@@ -10,6 +10,7 @@ import {
   SiJavascript,
   SiTailwindcss,
   SiReact,
+  SiCplusplus,
 } from "react-icons/si";
 
 const Skills = ({ darkMode }) => {
@@ -33,7 +34,17 @@ const Skills = ({ darkMode }) => {
             skill={"Python"}
             rating={85}
             description={
-              "Proficient in Python programming with strong algorithmic skills"
+              "Proficient in Python programming with strong algorithmic skills."
+            }
+          />
+          <SkillBox
+            logo={<SiCplusplus />}
+            black={"white"}
+            white={"black"}
+            skill={"C++"}
+            rating={85}
+            description={
+              "Familiar with C++ programming for solving Data Structure Problems."
             }
           />
           <SkillBox
@@ -43,7 +54,7 @@ const Skills = ({ darkMode }) => {
             skill={"Flask"}
             rating={70}
             description={
-              "Experienced in building web applications using Flask framework"
+              "Have an experience in building web applications using Flask framework."
             }
           />
           <SkillBox
@@ -53,7 +64,7 @@ const Skills = ({ darkMode }) => {
             skill={"JavaScript"}
             rating={80}
             description={
-              "Strong skills in modern JavaScript and web development"
+              "Have some experience in building modern JavaScript and web development backend."
             }
           />
           <SkillBox
@@ -62,7 +73,9 @@ const Skills = ({ darkMode }) => {
             white={"black"}
             skill={"React"}
             rating={80}
-            description={"Proficient in building interactive web applications"}
+            description={
+              "Have a basic knowledge in building interactive web applications frontend."
+            }
           />
           <SkillBox
             logo={<SiTailwindcss />}
@@ -70,7 +83,7 @@ const Skills = ({ darkMode }) => {
             white={"black"}
             skill={"Tailwind CSS"}
             rating={80}
-            description={"Skilled in responsive and efficient styling"}
+            description={"Having a basic idea of tailwind CSS."}
           />
           <SkillBox
             logo={<SiNumpy />}
@@ -79,7 +92,7 @@ const Skills = ({ darkMode }) => {
             skill={"NumPy"}
             rating={80}
             description={
-              "Proficient in numerical computing and array operations"
+              "Proficient in numerical computing and array operations."
             }
           />
           <SkillBox
@@ -88,7 +101,7 @@ const Skills = ({ darkMode }) => {
             white={"black"}
             skill={"Pandas"}
             rating={80}
-            description={"Expert in data manipulation and analysis"}
+            description={"Expert in data manipulation and analysis."}
           />
           <SkillBox
             logo={<SiAzuredevops />}
@@ -96,7 +109,7 @@ const Skills = ({ darkMode }) => {
             white={"black"}
             skill={"Azure Cloud"}
             rating={65}
-            description={"Familiar with Azure cloud services and deployment"}
+            description={"Familiar with Azure cloud services and deployment."}
           />
         </div>
       </div>
