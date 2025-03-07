@@ -22,6 +22,7 @@ export const experienceData = [
       "Achieved an accuracy of 0.94 and an F1-score of 0.94 on the test set.",
       "Presented project findings and recommendations to senior management.",
     ],
-    certificate: "#",
+    certificate:
+      "https://drive.google.com/file/d/18ijLap7nX0TSdFWV9rBqK3phynHbU9-O/view?usp=drive_link",
   },
 ];
