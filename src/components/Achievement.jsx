@@ -1,6 +1,22 @@
 import React from "react";
+import { FaMedal, FaAward, FaCertificate } from "react-icons/fa";
+import achievementData from "../data/achievementData";
 
 const Achievement = () => {
+  // Function to render the appropriate icon
+  const renderIcon = (iconName) => {
+    switch (iconName) {
+      case "medal":
+        return <FaMedal size={24} color="white" />;
+      case "award":
+        return <FaAward size={24} color="white" />;
+      case "certificate":
+        return <FaCertificate size={24} color="white" />;
+      default:
+        return <FaAward size={24} color="white" />;
+    }
+  };
+
   return (
     <div
       id="achievements"
@@ -8,97 +24,163 @@ const Achievement = () => {
       style={{ scrollMarginTop: "40px" }}
     >
       {/* heading */}
-      <div className="relative mb-5">
+      <div className="relative mb-10">
         <h3 className="text-3xl font-black text-gray-400 sm:text-2xl">
           Achievements & Certifications
         </h3>
         <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
       </div>
 
-      {/* Achievements Section */}
-      <div className="achievements-section">
-        <div data-aos="fade-up" className="left flex-1 w-full mb-8"></div>
+      {/* Mobile view - ZIGZAG PATTERN */}
+      <div className="block md:hidden">
+        <div className="relative">
+          {/* Vertical center line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-yellow-400"></div>
 
-        <div className="achievement-cards flex flex-col gap-6">
-          <div
-            data-aos="fade-up"
-            className="achievement-card border-l-4 border-yellow-500 pl-4 py-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] rounded-r-lg"
-          >
-            <h4 className="text-xl font-semibold">
-              Associate Cloud Engineer - Google Cloud Platform
-            </h4>
-            <p className="text-gray-500 text-sm mt-2">Cloud Certification</p>
-            <a
-              href="https://link-to-gcp-certificate.com"
-              className="text-blue-500 hover:text-blue-700 hover:underline mt-2 inline-block text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Certificate
-            </a>
-          </div>
+          {achievementData.map((achievement, index) => (
+            <div key={`mobile-${achievement.id}`} className="mb-16 relative">
+              {index % 2 === 0 ? (
+                <div className="flex items-center">
+                  <div className="w-1/2 pr-4">
+                    <div
+                      data-aos="fade-right"
+                      data-aos-mirror="true"
+                      data-aos-once="false"
+                      className="ml-auto bg-yellow-50 p-4 rounded-lg shadow-lg border-t-4 border-yellow-400 text-right"
+                    >
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        {achievement.title}
+                      </h4>
+                      {achievement.description && (
+                        <p className="text-gray-600 font-medium text-sm">
+                          {achievement.description}
+                        </p>
+                      )}
+                      {achievement.subtitle && (
+                        <p className="text-gray-500 text-xs mt-1">
+                          {achievement.subtitle}
+                        </p>
+                      )}
+                      <a
+                        href={achievement.link}
+                        className="text-blue-500 hover:text-blue-700 hover:underline mt-1 inline-block text-xs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {achievement.linkText}
+                      </a>
+                    </div>
+                  </div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-delay="100"
-            className="achievement-card border-l-4 border-yellow-500 pl-4 py-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] rounded-r-lg"
-          >
-            <h4 className="text-xl font-semibold">
-              Qualified GATE CSE 2022, 2023, 2024
-            </h4>
-            <p className="text-gray-500 text-sm mt-2">
-              Competitive Examination
-            </p>
-            <a
-              href="https://link-to-gate-scorecard.com"
-              className="text-blue-500 hover:text-blue-700 hover:underline mt-2 inline-block text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Score Card
-            </a>
-          </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2">
+                    <div
+                      data-aos="zoom-in"
+                      data-aos-mirror="true"
+                      data-aos-once="false"
+                      className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-10"
+                    >
+                      {renderIcon(achievement.icon)}
+                    </div>
+                  </div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-delay="200"
-            className="achievement-card border-l-4 border-yellow-500 pl-4 py-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] rounded-r-lg"
-          >
-            <h4 className="text-xl font-semibold">Qualified GATE DA 2024</h4>
-            <p className="text-gray-600 font-medium">
-              Score of 491 out of 1000 and AIR 2371
-            </p>
-            <p className="text-gray-500 text-sm mt-2">
-              Competitive Examination
-            </p>
-            <a
-              href="https://link-to-gate-da-scorecard.com"
-              className="text-blue-500 hover:text-blue-700 hover:underline mt-2 inline-block text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Score Card
-            </a>
-          </div>
+                  <div className="w-1/2"></div>
+                </div>
+              ) : (
+                <div className="flex items-center">
+                  <div className="w-1/2"></div>
 
-          <div
-            data-aos="fade-up"
-            data-aos-delay="300"
-            className="achievement-card border-l-4 border-yellow-500 pl-4 py-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] rounded-r-lg"
-          >
-            <h4 className="text-xl font-semibold">Letter of Appreciation</h4>
-            <p className="text-gray-600 font-medium">
-              For Qualifying GATE 2022
-            </p>
-            <a
-              href="https://link-to-appreciation-letter.com"
-              className="text-blue-500 hover:text-blue-700 hover:underline mt-2 inline-block text-sm"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Letter
-            </a>
-          </div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2">
+                    <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-10">
+                      {renderIcon(achievement.icon)}
+                    </div>
+                  </div>
+
+                  <div className="w-1/2 pl-4">
+                    <div
+                      data-aos="fade-left"
+                      data-aos-mirror="true"
+                      data-aos-once="false"
+                      className="mr-auto bg-yellow-50 p-4 rounded-lg shadow-lg border-t-4 border-yellow-400 text-left"
+                    >
+                      <h4 className="text-lg font-semibold text-gray-800">
+                        {achievement.title}
+                      </h4>
+                      {achievement.description && (
+                        <p className="text-gray-600 font-medium text-sm">
+                          {achievement.description}
+                        </p>
+                      )}
+                      {achievement.subtitle && (
+                        <p className="text-gray-500 text-xs mt-1">
+                          {achievement.subtitle}
+                        </p>
+                      )}
+                      <a
+                        href={achievement.link}
+                        className="text-blue-500 hover:text-blue-700 hover:underline mt-1 inline-block text-xs"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {achievement.linkText}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop view - STRAIGHT PATTERN */}
+      <div className="hidden md:block">
+        <div className="relative">
+          {/* Vertical center line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-yellow-400"></div>
+
+          {achievementData.map((achievement) => (
+            <div key={`desktop-${achievement.id}`} className="mb-20 relative">
+              <div className="flex justify-center mb-4">
+                <div
+                  data-aos="zoom-in"
+                  data-aos-mirror="true"
+                  data-aos-once="false"
+                  className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-10"
+                >
+                  {renderIcon(achievement.icon)}
+                </div>
+              </div>
+
+              <div
+                data-aos="fade-up"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                className="bg-yellow-50 p-6 rounded-lg shadow-lg border-t-4 border-yellow-400 max-w-md mx-auto"
+              >
+                <h4 className="text-xl font-semibold text-gray-800">
+                  {achievement.title}
+                </h4>
+                {achievement.description && (
+                  <p className="text-gray-600 font-medium">
+                    {achievement.description}
+                  </p>
+                )}
+                {achievement.subtitle && (
+                  <p className="text-gray-500 text-sm mt-2">
+                    {achievement.subtitle}
+                  </p>
+                )}
+                <a
+                  href={achievement.link}
+                  className="text-blue-500 hover:text-blue-700 hover:underline mt-2 inline-block text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {achievement.linkText}
+                </a>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

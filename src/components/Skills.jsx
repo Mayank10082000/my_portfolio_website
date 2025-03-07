@@ -7,10 +7,10 @@ import {
   SiNumpy,
   SiPandas,
   SiAzuredevops,
-  SiJavascript,
   SiTailwindcss,
   SiReact,
   SiCplusplus,
+  SiNodedotjs,
 } from "react-icons/si";
 
 const Skills = ({ darkMode }) => {
@@ -32,7 +32,6 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"Python"}
-            rating={85}
             description={
               "Proficient in Python programming with strong algorithmic skills."
             }
@@ -42,7 +41,6 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"C++"}
-            rating={85}
             description={
               "Familiar with C++ programming for solving Data Structure Problems."
             }
@@ -52,19 +50,17 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"Flask"}
-            rating={70}
             description={
               "Have an experience in building web applications using Flask framework."
             }
           />
           <SkillBox
-            logo={<SiJavascript />}
+            logo={<SiNodedotjs />}
             black={"white"}
             white={"black"}
-            skill={"JavaScript"}
-            rating={80}
+            skill={"NodeJS"}
             description={
-              "Have some experience in building modern JavaScript and web development backend."
+              "Familiar with NodeJS for building backend for web applications."
             }
           />
           <SkillBox
@@ -72,7 +68,6 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"React"}
-            rating={80}
             description={
               "Have a basic knowledge in building interactive web applications frontend."
             }
@@ -82,7 +77,6 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"Tailwind CSS"}
-            rating={80}
             description={"Having a basic idea of tailwind CSS."}
           />
           <SkillBox
@@ -90,7 +84,6 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"NumPy"}
-            rating={80}
             description={
               "Proficient in numerical computing and array operations."
             }
@@ -100,7 +93,6 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"Pandas"}
-            rating={80}
             description={"Expert in data manipulation and analysis."}
           />
           <SkillBox
@@ -108,7 +100,6 @@ const Skills = ({ darkMode }) => {
             black={"white"}
             white={"black"}
             skill={"Azure Cloud"}
-            rating={65}
             description={"Familiar with Azure cloud services and deployment."}
           />
         </div>
