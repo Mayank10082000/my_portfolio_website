@@ -24,6 +24,10 @@ const navItems = [
     id: 4,
     name: "education",
   },
+  {
+    id: 5,
+    name: "achievements",
+  },
 ];
 
 const NavBar = ({ toggleDarkMode, darkMode }) => {
@@ -107,7 +111,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
             ))}
             <a
               href="https://www.linkedin.com/in/mayankgupta10082000/"
-              className="bg-black text-[1rem] text-white px-8 py-2 rounded-lg font-bold hover:text-yellow-400 md:m-5 md:block md:mx-auto md:w-fit lg:px-3"
+              className="bg-black text-[0.78rem] text-white px-8 py-2 rounded-lg font-bold hover:text-yellow-400 md:m-5 md:block md:mx-auto md:w-fit lg:px-3"
             >
               HIRE ME
             </a>

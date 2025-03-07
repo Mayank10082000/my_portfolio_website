@@ -7,7 +7,6 @@ import {
   SiNumpy,
   SiPandas,
   SiAzuredevops,
-  SiGooglecloud,
   SiJavascript,
   SiTailwindcss,
   SiReact,
@@ -15,7 +14,7 @@ import {
 
 const Skills = ({ darkMode }) => {
   return (
-    <div id="skills">
+    <div id="skills" style={{ scrollMarginTop: "40px" }}>
       <div className="container m-auto mt-16">
         {/* heading */}
         <div data-aos="fade-up" className="relative mb-5">

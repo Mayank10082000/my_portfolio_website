@@ -2,7 +2,11 @@ import React from "react";
 
 const Education = () => {
   return (
-    <div id="education" className="container m-auto mt-16">
+    <div
+      id="education"
+      className="container m-auto mt-16 "
+      style={{ scrollMarginTop: "40px" }}
+    >
       {/* heading */}
       <div className="relative mb-5">
         <h3 className="text-3xl font-black text-gray-400 sm:text-2xl">

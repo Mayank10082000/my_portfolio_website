@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import Projects from "../components/Projects";
 import Skills from "../components/Skills";
 import Experience from "../components/Experience";
+import Achievement from "../components/Achievement";
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -20,6 +21,7 @@ const Home = () => {
       <Experience darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Projects darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Education darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Achievement darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       <Footer darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
     </>
   );
