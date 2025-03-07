@@ -9,7 +9,8 @@ const ExperienceCard = () => {
           <div
             data-aos="zoom-in"
             key={exp.id}
-            className="flex flex-col justify-center items-center gap-4 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-5 rounded-lg"
+            className="flex flex-col justify-center items-center gap-4 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-5 rounded-lg
+            transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-gray-50 hover:translate-y-[-5px]"
           >
             <h3 className="text-[1.4rem] font-semibold sm:text-xl">
               {exp.role}
@@ -28,7 +29,7 @@ const ExperienceCard = () => {
                 href={exp.certificate}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 underline"
+                className="text-blue-500 hover:text-blue-700 transition-colors duration-200 underline"
               >
                 View Certificate
               </a>

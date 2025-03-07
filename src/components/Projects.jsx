@@ -28,7 +28,10 @@ const Projects = () => {
               className="p-5 py-8 sm:py-6 sm:p-2 h-full"
             >
               <div className="relative h-full">
-                <div className="flex flex-col gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg h-full">
+                <div
+                  className="flex flex-col gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg h-full
+                transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-gray-50 hover:translate-y-[-5px]"
+                >
                   <h1 className="text-[1.4rem] font-semibold sm:text-xl">
                     {project.title}
                   </h1>

@@ -56,7 +56,8 @@ const Achievement = () => {
                       data-aos="fade-right"
                       data-aos-mirror="true"
                       data-aos-once="false"
-                      className="ml-auto bg-yellow-50 p-4 rounded-lg shadow-lg border-t-4 border-yellow-400 text-right"
+                      className="ml-auto bg-yellow-50 p-4 rounded-lg shadow-lg border-t-4 border-yellow-400 text-right
+                      transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-yellow-100 hover:-translate-x-1"
                       style={{ marginRight: "12px" }}
                     >
                       <h4 className="text-lg font-semibold text-gray-800">
@@ -88,7 +89,8 @@ const Achievement = () => {
                       data-aos="zoom-in"
                       data-aos-mirror="true"
                       data-aos-once="false"
-                      className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-20"
+                      className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-20
+                      transition-transform duration-300 hover:scale-110"
                     >
                       {renderIcon(achievement.icon)}
                     </div>
@@ -105,7 +107,8 @@ const Achievement = () => {
                       data-aos="zoom-in"
                       data-aos-mirror="true"
                       data-aos-once="false"
-                      className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-20"
+                      className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-20
+                      transition-transform duration-300 hover:scale-110"
                     >
                       {renderIcon(achievement.icon)}
                     </div>
@@ -118,7 +121,8 @@ const Achievement = () => {
                       data-aos="fade-left"
                       data-aos-mirror="true"
                       data-aos-once="false"
-                      className="mr-auto bg-yellow-50 p-4 rounded-lg shadow-lg border-t-4 border-yellow-400 text-left"
+                      className="mr-auto bg-yellow-50 p-4 rounded-lg shadow-lg border-t-4 border-yellow-400 text-left
+                      transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-yellow-100 hover:translate-x-1"
                       style={{ marginLeft: "12px" }}
                     >
                       <h4 className="text-lg font-semibold text-gray-800">
@@ -166,7 +170,8 @@ const Achievement = () => {
                   data-aos="zoom-in"
                   data-aos-mirror="true"
                   data-aos-once="false"
-                  className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-20"
+                  className="w-12 h-12 rounded-full bg-yellow-400 flex items-center justify-center shadow-lg z-20
+                  transition-transform duration-300 hover:scale-110"
                 >
                   {renderIcon(achievement.icon)}
                 </div>
@@ -176,7 +181,8 @@ const Achievement = () => {
                 data-aos="fade-up"
                 data-aos-mirror="true"
                 data-aos-once="false"
-                className="bg-yellow-50 p-6 rounded-lg shadow-lg border-t-4 border-yellow-400 max-w-md mx-auto"
+                className="bg-yellow-50 p-6 rounded-lg shadow-lg border-t-4 border-yellow-400 max-w-md mx-auto
+                transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-yellow-100 hover:-translate-y-2"
               >
                 <h4 className="text-xl font-semibold text-gray-800">
                   {achievement.title}

@@ -26,7 +26,8 @@ const Education = () => {
               key={education.id}
               data-aos="fade-up"
               data-aos-delay={index * 100}
-              className={`education-card border-l-4 ${education.borderColor} pl-4 py-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] rounded-r-lg`}
+              className={`education-card border-l-4 ${education.borderColor} pl-4 py-3 shadow-[0_0_16px_0px_rgba(0,0,0,0.1)] rounded-r-lg 
+              transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-gray-50 hover:translate-x-1 hover:border-l-8`}
             >
               <h4 className="text-xl font-semibold">{education.degree}</h4>
               <p className="text-gray-600 font-medium">
