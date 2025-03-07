@@ -1,12 +1,9 @@
 import React from "react";
-import { AiFillGithub } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
 import { FiDownload } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
 import resumePDF from "../assets/Resume.pdf";
 import mine from "../assets/mayank-gupta.png";
-import { SiKaggle, SiLeetcode } from "react-icons/si";
-import { MdEmail } from "react-icons/md";
+import { socialData, heroData } from "../data/socialData"; // Import the data
 
 const Hero = () => {
   return (
@@ -18,11 +15,11 @@ const Hero = () => {
               data-aos="fade-up"
               className=" text-5xl font-bold sm:text-[2rem]"
             >
-              Hello, I'm Mayank Gupta
+              Hello, I'm {heroData.name}
             </h2>
             <TypeAnimation
               data-aos="fade-up"
-              sequence={["Software Engineer", 1000, ""]}
+              sequence={heroData.roles.flatMap((role) => [role, 1000, ""])}
               speed={30}
               wrapper="h2"
               repeat={Infinity}
@@ -31,7 +28,7 @@ const Hero = () => {
           </div>
           <div data-aos="fade-up" className="buttons flex gap-5">
             <a
-              href="https://www.linkedin.com/in/mayankgupta10082000/"
+              href={heroData.linkedInLink}
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
             >
               <span>Hire Me</span>
@@ -52,31 +49,13 @@ const Hero = () => {
               data-aos-duration="1500"
               className="flex gap-5"
             >
-              <li>
-                <a href="https://github.com/Mayank10082000">
-                  <AiFillGithub className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/mayankgupta10082000/">
-                  <FaLinkedinIn className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.kaggle.com/mayankasheshgupta">
-                  <SiKaggle className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
-                </a>
-              </li>
-              <li>
-                <a href="https://leetcode.com/u/mayankgupta2000/">
-                  <SiLeetcode className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
-                </a>
-              </li>
-              <li>
-                <a href="mailto:mayankasheshgupta@gmail.com">
-                  <MdEmail className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
-                </a>
-              </li>
+              {socialData.map((item) => (
+                <li key={item.id}>
+                  <a href={item.url} aria-label={item.ariaLabel}>
+                    <item.icon className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -93,7 +72,7 @@ const Hero = () => {
                 data-aos="fade-up"
                 className="h-[90%] w-full object-cover md:h-[95%] md:m-auto sm:m-0 z-10 relative"
                 src={mine}
-                alt="Mayank Gupta"
+                alt={heroData.name}
               />
             </div>
           </div>
