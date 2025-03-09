@@ -38,10 +38,11 @@ const SkillBox = ({ logo, black, white, skill, rating, description }) => {
 
         {/* Back of the card */}
         <div
-          className={`absolute w-full h-full backface-hidden rotate-y-180 rounded-lg bg-${white} text-${black} shadow-2xl flex flex-col items-center justify-center p-4 text-center`}
+          className={`absolute w-full h-full backface-hidden rotate-y-180 rounded-lg bg-${white} text-${black} shadow-2xl flex flex-col items-center justify-center p-4 sm:p-2 text-center`}
         >
-          <h3 className="text-xl font-bold mb-2">{skill}</h3>
-          <p className="text-sm">{description}</p>
+          <p className="text-sm sm:text-xs exsm:text-[10px] overflow-y-auto max-h-full">
+            {description}
+          </p>
         </div>
       </div>
     </div>

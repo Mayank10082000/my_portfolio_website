@@ -84,7 +84,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
           <ul
             className={`flex items-center space-x-11 ${
               !isOpen ? "md:flex" : "md:right-[0%]"
-            } md:flex-col md:absolute m-auto md:top-0 md:right-[-100%] md:w-[78%] md:h-screen md:bg-white `}
+            } md:flex-col md:absolute m-auto md:top-0 md:right-[-100%] md:w-[78%] md:h-screen md:bg-white md:space-x-0 md:text-center`}
           >
             {/* Use a button tag for better accessibility */}
             <button
@@ -96,7 +96,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
             {navItems.map((item) => (
               <li
                 key={item.id}
-                className="md:m-6 md:flex md:gap-6 md:items-center md:justify-center"
+                className="md:m-6 md:flex md:justify-center md:w-full"
               >
                 <a
                   onClick={() => toggleNav(item.name)}
