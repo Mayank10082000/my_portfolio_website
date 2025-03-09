@@ -7,7 +7,10 @@ import { socialData, heroData } from "../data/socialData"; // Import the data
 
 const Hero = () => {
   return (
-    <div id="home" className={` bg-gradient-to-r from-green-200 to-blue-200 `}>
+    <div
+      id="home"
+      className={`bg-gradient-to-r from-green-200 to-blue-200 pt-16 sm:pt-20`}
+    >
       <div className=" container mx-auto pt-5 h-[750px] md:h-[100vh] md:flex-col-reverse sm:h-[780px]  flex sm:flex-col-reverse sm:pt-0 ">
         <div className=" left mt-4 md:mt-0 flex-1 flex flex-col justify-center gap-5 w-1/2 md:w-full md:py-2 sm:py-0">
           <div className="info w-fit flex flex-col items-start justify-center gap-3 sm:gap-2">
@@ -60,7 +63,7 @@ const Hero = () => {
           </div>
         </div>
         <div className="right top-5 flex-1 flex items-center justify-center md:items-end sm:items-end">
-          <div className="relative h-[88%] w-fit flex items-center sm:items-end">
+          <div className="relative h-[88%] w-fit flex items-center sm:items-end sm:mt-16">
             {/* Animated Circular Line Container */}
             <div className="relative">
               {/* Circular Lines */}
