@@ -63,19 +63,6 @@ const Footer = () => {
       <div className="container mx-auto">
         {/* Main footer content */}
         <div className="flex flex-col md:flex-row justify-between gap-8 px-6">
-          {/* About section */}
-          <div className="md:w-1/3">
-            <h3 className="text-2xl font-bold mb-4">Mayank Gupta</h3>
-            <p className="text-gray-600 mb-4">
-              Software Engineer passionate about building innovative solutions
-              and exploring new technologies.
-            </p>
-            <p className="text-gray-600">
-              Based in India, available for new opportunities and
-              collaborations.
-            </p>
-          </div>
-
           {/* Quick Links */}
           <div className="md:w-1/4">
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
