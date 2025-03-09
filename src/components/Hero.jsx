@@ -64,10 +64,10 @@ const Hero = () => {
         <div className="right top-5 flex-1 flex items-center justify-center md:items-end sm:items-end">
           <div className="relative h-[88%] w-fit flex items-center sm:items-end sm:mt-16">
             {/* Animated Circular Line Container */}
-            <div className="relative">
+            <div className="relative isolate overflow-hidden">
               {/* Circular Lines */}
-              <div className="absolute -inset-4 border-4 border-yellow-500 border-l-transparent border-r-transparent animate-spin-slow rounded-full"></div>
-              <div className="absolute -inset-2 border-4 border-yellow-500 border-t-transparent border-b-transparent animate-spin-reverse-slow rounded-full"></div>
+              <div className="absolute -inset-4 border-4 border-yellow-500 border-l-transparent border-r-transparent animate-spin-slow rounded-full transform-gpu"></div>
+              <div className="absolute -inset-2 border-4 border-yellow-500 border-t-transparent border-b-transparent animate-spin-reverse-slow rounded-full transform-gpu"></div>
 
               {/* Image */}
               <img
