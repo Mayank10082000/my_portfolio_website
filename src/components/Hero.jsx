@@ -1,7 +1,6 @@
 import React from "react";
 import { FiDownload } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
-import resumePDF from "../assets/Resume.pdf";
 import mine from "../assets/mayank-gupta.png";
 import { socialData, heroData } from "../data/socialData"; // Import the data
 
