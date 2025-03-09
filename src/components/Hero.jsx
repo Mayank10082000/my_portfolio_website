@@ -37,7 +37,7 @@ const Hero = () => {
               <span>Hire Me</span>
             </a>
             <a
-              href={resumePDF}
+              href="https://drive.google.com/file/d/1RbCAc3K-8Q3272M0EOq1clRoqUMbYqgk/view?usp=sharing"
               className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold  hover:text-yellow-500"
               download
             >
