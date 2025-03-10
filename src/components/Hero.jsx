@@ -62,14 +62,12 @@ const Hero = () => {
           </div>
         </div>
         <div className="right top-5 flex-1 flex items-center justify-center md:items-end sm:items-end">
-          <div className="relative h-[88%] w-fit flex items-center sm:items-end sm:mt-16">
-            {/* Animated Circular Line Container */}
-            <div className="relative isolate overflow-hidden">
-              {/* Circular Lines */}
+          {/* Increased height from 88% to 100% to give more space for the animations */}
+          <div className="relative h-[100%] w-fit flex items-center sm:items-end sm:mt-16">
+            {/* Removed 'overflow-hidden' to prevent clipping */}
+            <div className="relative isolate">
               <div className="absolute -inset-4 border-4 border-yellow-500 border-l-transparent border-r-transparent animate-spin-slow rounded-full transform-gpu"></div>
               <div className="absolute -inset-2 border-4 border-yellow-500 border-t-transparent border-b-transparent animate-spin-reverse-slow rounded-full transform-gpu"></div>
-
-              {/* Image */}
               <img
                 data-aos="fade-up"
                 className="h-[90%] w-full object-cover md:h-[95%] md:m-auto sm:m-0 z-10 relative"
