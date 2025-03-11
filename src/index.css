@@ -37,8 +37,7 @@ html {
   background: #000;
 }
 
-/* Hero circular spin */
-.circle-text {
+/* Hero circular spin .circle-text {
   -webkit-animation: spin 12s linear infinite;
   animation: spin 12s linear infinite;
 }
@@ -68,7 +67,7 @@ html {
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* 3D Flip Card Animations */
 .perspective-500 {
