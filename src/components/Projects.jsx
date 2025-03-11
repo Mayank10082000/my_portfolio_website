@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { projectsData } from "../data/projectsData";
 import { motion, useInView } from "framer-motion";
-import { fadeIn, staggerContainer } from "../utils/motionVariants";
 import ProjectCard from "../chip/ProjectCard";
 
 const Projects = () => {
@@ -11,6 +10,33 @@ const Projects = () => {
     amount: 0.2,
   });
 
+  // Container animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  // Individual item animation variants
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <div
       id="projects"
@@ -19,9 +45,9 @@ const Projects = () => {
     >
       {/* Heading */}
       <motion.div
-        variants={fadeIn("up")}
-        initial="hidden"
-        animate={isInView ? "show" : "hidden"}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
         className="relative mb-5"
       >
         <h3 className="text-3xl font-black text-gray-400 sm:text-2xl">
@@ -33,13 +59,15 @@ const Projects = () => {
       {/* Projects Grid */}
       <motion.div
         ref={ref}
-        variants={staggerContainer()}
+        variants={containerVariants}
         initial="hidden"
-        animate={isInView ? "show" : "hidden"}
+        animate={isInView ? "visible" : "hidden"}
         className="grid grid-cols-3 gap-6 w-[90%] mx-auto mt-8 md:grid-cols-1 md:gap-10"
       >
         {projectsData.map((project, index) => (
-          <ProjectCard key={project.id} project={project} index={index} />
+          <motion.div key={project.id} variants={itemVariants}>
+            <ProjectCard project={project} index={index} />
+          </motion.div>
         ))}
       </motion.div>
     </div>

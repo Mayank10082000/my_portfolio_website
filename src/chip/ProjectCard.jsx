@@ -7,21 +7,12 @@ const ProjectCard = ({ project, index }) => {
 
   return (
     <motion.div
-      key={project.id}
-      variants={{
-        hidden: {
-          opacity: 0,
-          y: 30,
-        },
-        show: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            type: "tween",
-            duration: 0.8,
-            delay: index * 0.2,
-          },
-        },
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: "tween",
+        duration: 0.8,
+        delay: index * 0.2,
       }}
       className="p-5 py-8 sm:py-6 sm:p-2 h-full"
     >
@@ -51,15 +42,10 @@ const ProjectCard = ({ project, index }) => {
         <div className="flex flex-wrap gap-2 my-1">
           {project.technologies.map((tech, techIndex) => (
             <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 + techIndex * 0.05 }}
               key={techIndex}
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                show: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { delay: index * 0.2 + techIndex * 0.05 },
-                },
-              }}
               className="px-2 py-1 bg-gray-200 rounded-md text-xs"
             >
               {tech}
