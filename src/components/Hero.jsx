@@ -23,12 +23,19 @@ const Hero = () => {
               Hello, I'm {heroData.name}
             </motion.h2>
             <TypeAnimation
-              data-aos="fade-up"
               sequence={heroData.roles.flatMap((role) => [role, 1000, ""])}
               speed={30}
               wrapper="h2"
               repeat={Infinity}
               className="text-yellow-500 text-4xl font-bold sm:text-3xl"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: {
+                  duration: 0.8,
+                  delay: 0.5, // Add a slight delay to create a staggered effect
+                },
+              }}
             />
           </div>
           <motion.div
