@@ -114,18 +114,18 @@ const AchievementCard3D = ({ achievement, index }) => {
             </div>
 
             {/* Title and Content */}
-            <h4 className="text-xl font-semibold text-gray-800 text-center mb-2">
+            <h4 className="text-xl sm:text-lg exsm:text-base font-semibold text-gray-800 text-center mb-2 line-clamp-3">
               {achievement.title}
             </h4>
 
             {achievement.subtitle && (
-              <p className="text-gray-500 text-sm text-center mb-2">
+              <p className="text-gray-500 text-sm sm:text-xs text-center mb-2 line-clamp-2">
                 {achievement.subtitle}
               </p>
             )}
 
             {achievement.description && (
-              <p className="text-gray-600 font-medium text-center mb-4">
+              <p className="text-gray-600 font-medium text-sm sm:text-xs text-center mb-4 line-clamp-3">
                 {achievement.description}
               </p>
             )}
@@ -169,11 +169,11 @@ const Achievement = () => {
       </motion.div>
 
       {/* Achievement Cards 2x2 Grid Layout */}
-      <div className="grid grid-cols-2 gap-6 w-[90%] mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-1 gap-6 w-[90%] mx-auto">
         {achievementData.map((achievement, index) => (
           <div
             key={achievement.id}
-            className="h-[450px] sm:h-[400px] exsm:h-[350px]"
+            className="min-h-[450px] sm:min-h-[320px] exsm:min-h-[300px]"
           >
             <AchievementCard3D achievement={achievement} index={index} />
           </div>
