@@ -2,16 +2,15 @@ import React from "react";
 import { experienceData } from "../data/experienceData"; // We'll create this file next
 import { motion } from "framer-motion";
 
-const ExperienceCard = () => {
+const ExperienceCard = ({ variants, custom }) => {
   return (
     <>
       {experienceData.map((exp, index) => {
         return (
           <motion.div
             key={exp.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            variants={variants}
+            custom={index}
             whileHover={{
               y: -5,
               boxShadow: "0 10px 20px rgba(0,0,0,0.2)",

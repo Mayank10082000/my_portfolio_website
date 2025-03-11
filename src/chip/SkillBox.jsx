@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
-const SkillBox = ({ logo, black, white, skill, rating, description }) => {
+const SkillBox = ({
+  logo,
+  black,
+  white,
+  skill,
+  rating,
+  description,
+  variants,
+  custom,
+  animate,
+}) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleMouseEnter = () => {
@@ -19,6 +29,9 @@ const SkillBox = ({ logo, black, white, skill, rating, description }) => {
       onMouseLeave={handleMouseLeave}
       whileHover={{ scale: 1.05 }}
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      variants={variants}
+      custom={custom}
+      animate={animate}
     >
       <div
         className={`relative w-full h-full transform-style-3d transition-transform duration-700 ${
