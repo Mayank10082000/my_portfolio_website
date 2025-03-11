@@ -55,13 +55,13 @@ const Skills = ({ darkMode }) => {
           <span className="h-[1.1px] right-0 absolute w-[90%] bg-gray-300 block"></span>
         </motion.div>
 
-        {/* Skills Grid - this is the container we're tracking for scroll */}
+        {/* Skills Grid - increased padding and gap for better floating effect */}
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="flex flex-wrap justify-center items-center gap-8 p-5"
+          className="flex flex-wrap justify-center items-center gap-12 p-10 sm:gap-8 sm:p-5"
         >
           {skillsData.map((skill, index) => (
             <SkillBox

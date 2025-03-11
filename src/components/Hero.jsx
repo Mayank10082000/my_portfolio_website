@@ -6,13 +6,24 @@ import { socialData, heroData } from "../data/socialData"; // Import the data
 import { motion } from "framer-motion";
 
 const Hero = () => {
+  // Floating animation for the profile image
+  const floatingAnimation = {
+    y: [0, -15, 0], // Slightly larger movement for the hero image
+    transition: {
+      duration: 4, // Slower animation for more subtle effect
+      repeat: Infinity,
+      repeatType: "mirror",
+      ease: "easeInOut",
+    },
+  };
+
   return (
     <div
       id="home"
       className={`bg-gradient-to-r from-green-200 to-blue-200 pt-16 sm:pt-20`}
     >
-      <div className=" container mx-auto pt-5 h-[750px] md:h-[100vh] md:flex-col-reverse sm:h-[780px]  flex sm:flex-col-reverse sm:pt-0 ">
-        <div className=" left mt-4 md:mt-0 flex-1 flex flex-col justify-center gap-5 w-1/2 md:w-full md:py-2 sm:py-0">
+      <div className="container mx-auto pt-5 h-[750px] md:h-[100vh] md:flex-col-reverse sm:h-[780px] flex sm:flex-col-reverse sm:pt-0">
+        <div className="left mt-4 md:mt-0 flex-1 flex flex-col justify-center gap-5 w-1/2 md:w-full md:py-2 sm:py-0">
           <div className="info w-fit flex flex-col items-start justify-center gap-3 sm:gap-2">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -46,13 +57,13 @@ const Hero = () => {
           >
             <a
               href={heroData.linkedInLink}
-              className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
+              className="bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold hover:text-yellow-500"
             >
               <span>Hire Me</span>
             </a>
             <a
               href="https://drive.google.com/file/d/1QWXu-mc4guwEBzu_3WtITplIyVP1Mad0/view?usp=sharing"
-              className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold  hover:text-yellow-500"
+              className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold hover:text-yellow-500"
               download
             >
               <div className="flex items-center gap-1">
@@ -78,9 +89,12 @@ const Hero = () => {
           </div>
         </div>
         <div className="right top-5 flex-1 flex items-center justify-center md:items-end sm:items-end">
-          {/* Increased height from 88% to 100% to give more space for the animations */}
-          <div className="relative h-[100%] w-fit flex items-center sm:items-end sm:mt-16">
-            {/* Removed 'overflow-hidden' to prevent clipping */}
+          {/* Wrapper for the floating effect and shadow */}
+          <motion.div
+            className="relative h-[100%] w-fit flex items-center sm:items-end sm:mt-16"
+            // Apply the floating animation after the initial fade-in
+            animate={floatingAnimation}
+          >
             <div className="relative isolate">
               <motion.img
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -91,7 +105,7 @@ const Hero = () => {
                 alt={heroData.name}
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
