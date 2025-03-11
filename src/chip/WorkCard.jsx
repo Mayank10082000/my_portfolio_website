@@ -4,16 +4,19 @@ import { data } from "../data/data";
 import { RxExternalLink } from "react-icons/rx";
 import { AiOutlineGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const WorkCard = () => {
   const reversedData = [...data].reverse();
 
   return (
     <>
-      {reversedData.map((data) => {
+      {reversedData.map((data, index) => {
         return (
-          <div
-            data-aos="zoom-in"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
             key={data.id}
             className="flex flex-col justify-center items-center gap-4"
           >
@@ -56,7 +59,7 @@ const WorkCard = () => {
             <p className="text-gray-800 text-xl font-medium sm:text-lg">
               {data.title}
             </p>
-          </div>
+          </motion.div>
         );
       })}
     </>

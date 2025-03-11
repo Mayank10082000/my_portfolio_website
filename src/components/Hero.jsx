@@ -3,6 +3,7 @@ import { FiDownload } from "react-icons/fi";
 import { TypeAnimation } from "react-type-animation";
 import mine from "../assets/mayank-gupta.png";
 import { socialData, heroData } from "../data/socialData"; // Import the data
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -13,12 +14,14 @@ const Hero = () => {
       <div className=" container mx-auto pt-5 h-[750px] md:h-[100vh] md:flex-col-reverse sm:h-[780px]  flex sm:flex-col-reverse sm:pt-0 ">
         <div className=" left mt-4 md:mt-0 flex-1 flex flex-col justify-center gap-5 w-1/2 md:w-full md:py-2 sm:py-0">
           <div className="info w-fit flex flex-col items-start justify-center gap-3 sm:gap-2">
-            <h2
-              data-aos="fade-up"
-              className=" text-5xl font-bold sm:text-[2rem]"
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl font-bold sm:text-[2rem]"
             >
               Hello, I'm {heroData.name}
-            </h2>
+            </motion.h2>
             <TypeAnimation
               data-aos="fade-up"
               sequence={heroData.roles.flatMap((role) => [role, 1000, ""])}
@@ -28,7 +31,12 @@ const Hero = () => {
               className="text-yellow-500 text-4xl font-bold sm:text-3xl"
             />
           </div>
-          <div data-aos="fade-up" className="buttons flex gap-5">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="buttons flex gap-5"
+          >
             <a
               href={heroData.linkedInLink}
               className=" bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold  hover:text-yellow-500"
@@ -44,11 +52,12 @@ const Hero = () => {
                 Resume <FiDownload />
               </div>
             </a>
-          </div>
+          </motion.div>
           <div className="icons flex mt-5">
-            <ul
-              data-aos="fade-up"
-              data-aos-duration="1500"
+            <motion.ul
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="flex gap-5"
             >
               {socialData.map((item) => (
@@ -58,7 +67,7 @@ const Hero = () => {
                   </a>
                 </li>
               ))}
-            </ul>
+            </motion.ul>
           </div>
         </div>
         <div className="right top-5 flex-1 flex items-center justify-center md:items-end sm:items-end">
@@ -66,8 +75,10 @@ const Hero = () => {
           <div className="relative h-[100%] w-fit flex items-center sm:items-end sm:mt-16">
             {/* Removed 'overflow-hidden' to prevent clipping */}
             <div className="relative isolate">
-              <img
-                data-aos="fade-up"
+              <motion.img
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
                 className="h-[90%] w-full object-cover md:h-[95%] md:m-auto sm:m-0 z-10 relative"
                 src={mine}
                 alt={heroData.name}

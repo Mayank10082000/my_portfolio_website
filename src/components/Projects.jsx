@@ -1,5 +1,6 @@
 import React from "react";
 import { projectsData } from "../data/projectsData"; // Import the projects data
+import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
@@ -9,28 +10,51 @@ const Projects = () => {
       style={{ scrollMarginTop: "40px" }}
     >
       {/* heading */}
-      <div data-aos="fade-up" className="relative mb-5">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="relative mb-5"
+      >
         <h3 className="text-3xl font-black text-gray-400 sm:text-2xl">
           Projects
         </h3>
         <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
-      </div>
-      <div data-aos="fade-up" className="left flex-1 w-full"></div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="left flex-1 w-full"
+      ></motion.div>
       {/* card*/}
-      <div className="grid grid-cols-1 gap-10 w-[90%] mx-auto mt-8">
-        {/* Project Row */}
-        <div className="grid grid-cols-3 gap-4 md:grid-cols-1 md:gap-10">
-          {projectsData.map((project) => (
-            <fieldset
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+        className="grid grid-cols-1 gap-10 w-[90%] mx-auto mt-8"
+      >
+        <motion.div className="grid grid-cols-3 gap-4 md:grid-cols-1 md:gap-10">
+          {projectsData.map((project, index) => (
+            <motion.fieldset
               key={project.id}
-              data-aos="zoom-in"
-              data-aos-delay={project.delay}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.3 + index * 0.2,
+              }}
+              whileHover={{
+                y: -5,
+                transition: { duration: 0.2 },
+              }}
               className="p-5 py-8 sm:py-6 sm:p-2 h-full"
             >
+              {/* Keep the content the same */}
               <div className="relative h-full">
                 <div
                   className="flex flex-col gap-1 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-3 rounded-lg h-full
-                transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-gray-50 hover:translate-y-[-5px]"
+          transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-gray-50 hover:translate-y-[-5px]"
                 >
                   <h1 className="text-[1.4rem] font-semibold sm:text-xl">
                     {project.title}
@@ -72,10 +96,10 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-            </fieldset>
+            </motion.fieldset>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiMenu } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
+import { motion } from "framer-motion";
 
 const navItems = [
   {
@@ -60,7 +61,12 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
       } `}
     >
       <nav className=" container m-auto flex items-center justify-between">
-        <div data-aos="fade-down" className="logo">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="logo"
+        >
           <Link
             onClick={() => window.scrollTo(0, 0)}
             to="/"
@@ -68,39 +74,39 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
           >
             Mayank Gupta.
           </Link>
-        </div>
-        <div
-          data-aos="fade-down"
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="nav-items flex items-center space-x-11"
         >
-          {/* hamburger */}
-          <button
+          {/* hamburger with spinning animation (will be visible both in and outside the menu) */}
+          <motion.button
             onClick={toggleNav}
-            className="cursor-pointer text-2xl hidden md:block"
+            className="cursor-pointer text-2xl hidden md:block md:z-50"
+            animate={{
+              rotate: isOpen ? 180 : 0,
+            }}
+            transition={{ duration: 0.3 }}
           >
             <HiMenu size={25} />
-          </button>
+          </motion.button>
 
-          <ul
-            className={`flex items-center space-x-11 transition-all duration-500 ease-in-out 
-            md:flex-col md:absolute m-auto md:top-0 md:bg-white md:space-x-0 md:text-center md:w-[78%] md:h-screen
-            ${
-              isOpen
-                ? "md:right-[0%] md:opacity-100"
-                : "md:right-[-100%] md:opacity-0"
-            }`}
+          <motion.ul
+            className="flex items-center space-x-11 md:flex-col md:fixed md:right-0 md:top-0 md:bg-white md:space-x-0 md:text-center md:w-full md:max-w-[300px] md:h-screen md:z-40"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{
+              opacity: isOpen ? 1 : 0,
+              x: isOpen ? 0 : "100%",
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            {/* Use a button tag for better accessibility */}
-            <button
-              onClick={toggleNav}
-              className={`text-3xl hidden md:block relative right-0 top-4 container mx-auto`}
-            >
-              <RxCross2 size={25} />
-            </button>
             {navItems.map((item) => (
-              <li
+              <motion.li
                 key={item.id}
                 className="md:m-6 md:flex md:justify-center md:w-full"
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
               >
                 <a
                   onClick={() => toggleNav(item.name)}
@@ -111,7 +117,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
                 >
                   {item.name}
                 </a>
-              </li>
+              </motion.li>
             ))}
             <a
               href="https://www.linkedin.com/in/mayankgupta10082000/"
@@ -119,8 +125,8 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
             >
               HIRE ME
             </a>
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </nav>
     </div>
   );

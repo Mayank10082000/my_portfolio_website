@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 const SkillBox = ({ logo, black, white, skill, rating, description }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -12,12 +13,12 @@ const SkillBox = ({ logo, black, white, skill, rating, description }) => {
   };
 
   return (
-    <div
-      data-aos="zoom-in"
-      data-aos-duration="1000"
+    <motion.div
       className="perspective-500 w-[11rem] h-[11rem] rounded-lg sm:w-[7.2rem] sm:h-[7.2rem] exsm:w-[6.5rem] exsm:h-[6.5rem]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       <div
         className={`relative w-full h-full transform-style-3d transition-transform duration-700 ${
@@ -45,7 +46,7 @@ const SkillBox = ({ logo, black, white, skill, rating, description }) => {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

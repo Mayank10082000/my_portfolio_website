@@ -1,14 +1,25 @@
 import React from "react";
 import { contactLinks, footerConfig, quickLinks } from "../data/footerData";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-100 pt-10 pb-6 mt-16">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="bg-gray-100 pt-10 pb-6 mt-16"
+    >
       <div className="container mx-auto">
         {/* Main footer content */}
         <div className="flex flex-col md:flex-row justify-between gap-8 px-6">
           {/* Quick Links */}
-          <div className="md:w-1/4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="md:w-1/4"
+          >
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
@@ -22,7 +33,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Contact section */}
           <div className="md:w-1/3">
@@ -55,7 +66,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

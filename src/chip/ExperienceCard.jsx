@@ -1,16 +1,23 @@
 import React from "react";
 import { experienceData } from "../data/experienceData"; // We'll create this file next
+import { motion } from "framer-motion";
 
 const ExperienceCard = () => {
   return (
     <>
-      {experienceData.map((exp) => {
+      {experienceData.map((exp, index) => {
         return (
-          <div
-            data-aos="zoom-in"
+          <motion.div
             key={exp.id}
-            className="flex flex-col justify-center items-center gap-4 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-5 rounded-lg
-            transition-all duration-300 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:bg-gray-50 hover:translate-y-[-5px]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{
+              y: -5,
+              boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
+              backgroundColor: "rgb(249, 250, 251)",
+            }}
+            className="flex flex-col justify-center items-center gap-4 border-2 border-yellow-400 shadow-[0px_0px_16px_1px_rgba(0,0,0,0.1)] p-5 rounded-lg"
           >
             <h3 className="text-[1.4rem] font-semibold sm:text-xl">
               {exp.role}
@@ -34,7 +41,7 @@ const ExperienceCard = () => {
                 View Certificate
               </a>
             )}
-          </div>
+          </motion.div>
         );
       })}
     </>
