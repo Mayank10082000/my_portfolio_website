@@ -7,10 +7,10 @@ import {
   FaStar,
 } from "react-icons/fa";
 import achievementData from "../data/achievementData";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 
 // 3D Card component with vertical design
-const AchievementCard3D = ({ achievement, index }) => {
+const AchievementCard3D = ({ achievement, index, variants }) => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [glarePosition, setGlarePosition] = useState({ x: 50, y: 50 });
@@ -65,12 +65,7 @@ const AchievementCard3D = ({ achievement, index }) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-      className="w-full h-full"
-    >
+    <motion.div variants={variants} custom={index} className="w-full h-full">
       <div
         ref={cardRef}
         className="relative h-full"
@@ -149,6 +144,44 @@ const AchievementCard3D = ({ achievement, index }) => {
 };
 
 const Achievement = () => {
+  // Add ref and useInView hook for scroll animations
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: false,
+    amount: 0.2, // Trigger when 20% of the element is in view
+  });
+
+  // Add animation variants (consistent with other sections)
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 30,
+      scale: 0.9,
+    },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        type: "spring",
+        stiffness: 80,
+        damping: 15,
+        delay: 0.1 * i,
+      },
+    }),
+  };
+
   return (
     <div
       id="achievements"
@@ -168,17 +201,27 @@ const Achievement = () => {
         <span className="h-[1.1px] right-0 absolute w-[92%] bg-gray-300 block"></span>
       </motion.div>
 
-      {/* Achievement Cards 2x2 Grid Layout */}
-      <div className="grid grid-cols-2 sm:grid-cols-1 gap-6 w-[90%] mx-auto">
+      {/* Achievement Cards with scroll trigger animation */}
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className="grid grid-cols-2 sm:grid-cols-1 gap-6 w-[90%] mx-auto"
+      >
         {achievementData.map((achievement, index) => (
           <div
             key={achievement.id}
             className="min-h-[450px] sm:min-h-[320px] exsm:min-h-[300px]"
           >
-            <AchievementCard3D achievement={achievement} index={index} />
+            <AchievementCard3D
+              achievement={achievement}
+              index={index}
+              variants={itemVariants}
+            />
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };
