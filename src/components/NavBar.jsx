@@ -130,7 +130,7 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <div className="flex flex-col items-center justify-center h-full">
+        <div className="flex flex-col items-center justify-start h-full pt-20">
           {navItems.map((item) => (
             <motion.div
               key={item.id}
