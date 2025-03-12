@@ -55,21 +55,39 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="buttons flex gap-5"
           >
-            <a
+            <motion.a
               href={heroData.linkedInLink}
               className="bg-black text-[1rem] text-white px-10 py-2 sm:px-8 rounded-lg font-bold hover:text-yellow-500"
+              whileHover={{
+                scale: 1.1,
+                y: -5,
+                transition: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                },
+              }}
             >
               <span>Hire Me</span>
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="https://drive.google.com/file/d/1QWXu-mc4guwEBzu_3WtITplIyVP1Mad0/view?usp=sharing"
               className="flex items-center gap-2 border- text-[1rem] bg-white border-black px-7 py-2 sm:px-6 rounded-lg font-bold hover:text-yellow-500"
               download
+              whileHover={{
+                scale: 1.1,
+                y: -5,
+                transition: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                },
+              }}
             >
               <div className="flex items-center gap-1">
                 Resume <FiDownload />
               </div>
-            </a>
+            </motion.a>
           </motion.div>
           <div className="icons flex mt-5">
             <motion.ul
@@ -79,11 +97,22 @@ const Hero = () => {
               className="flex gap-5"
             >
               {socialData.map((item) => (
-                <li key={item.id}>
+                <motion.li
+                  key={item.id}
+                  whileHover={{
+                    scale: 1.2,
+                    y: -5,
+                    transition: {
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    },
+                  }}
+                >
                   <a href={item.url} aria-label={item.ariaLabel}>
                     <item.icon className="h-[1.8rem] w-[1.8rem] text-xl hover:scale-125" />
                   </a>
-                </li>
+                </motion.li>
               ))}
             </motion.ul>
           </div>
@@ -92,8 +121,19 @@ const Hero = () => {
           {/* Wrapper for the floating effect and shadow */}
           <motion.div
             className="relative h-[100%] w-fit flex items-center sm:items-end sm:mt-16"
-            // Apply the floating animation after the initial fade-in
+            // Keep your existing floating animation
             animate={floatingAnimation}
+            // Add this whileHover animation
+            whileHover={{
+              scale: 1.05,
+              y: -10,
+              transition: {
+                duration: 0.3,
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+              },
+            }}
           >
             <div className="relative isolate">
               <motion.img

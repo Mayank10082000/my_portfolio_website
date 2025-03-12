@@ -109,12 +109,21 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
                 </a>
               </motion.li>
             ))}
-            <a
+            <motion.a
               href="https://www.linkedin.com/in/mayankgupta10082000/"
               className="bg-black text-[0.78rem] text-white px-8 py-2 rounded-lg font-bold hover:text-yellow-400 lg:px-3"
+              whileHover={{
+                scale: 1.1,
+                y: -5,
+                transition: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                },
+              }}
             >
               HIRE ME
-            </a>
+            </motion.a>
           </ul>
         </motion.div>
       </nav>
@@ -148,12 +157,21 @@ const NavBar = ({ toggleDarkMode, darkMode }) => {
               </a>
             </motion.div>
           ))}
-          <a
+          <motion.a
             href="https://www.linkedin.com/in/mayankgupta10082000/"
             className="bg-black text-[0.78rem] mt-6 text-white px-8 py-2 rounded-lg font-bold hover:text-yellow-400"
+            whileHover={{
+              scale: 1.1,
+              y: -5,
+              transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+              },
+            }}
           >
             HIRE ME
-          </a>
+          </motion.a>
         </div>
       </motion.div>
     </div>
